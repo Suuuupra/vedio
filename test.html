@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script src="flv.min.js"></script>
+<video id="video" height="300" width="400" controls="controls"></video>
+<script>
+    if(flvjs.isSupported()){
+        var videoElement =document.getElementById('video');
+        var flvPlayer = flvjs.createPlayer({
+            type:'flv',
+            url:'http://192.168.0.69:85/live/tvstream.flv'
+        });
+        flvPlayer.attachMediaElement(videoElement);
+        flvPlayer.load();
+        flvPlayer.play();
+    }
+</script>
+</body>
+</html>
